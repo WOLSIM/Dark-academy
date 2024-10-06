@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: #f5f5f5;
+
+}
+
+header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(18, 18, 18, 0.7); /* Transparent Background */
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top:0;
+
+
+    list-style: none;
+
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 12px;
+    font-weight: 700;
+    padding:10px 20px;
+    border: 2px solid #f5f5f5;
+    border-radius:30px;
+    transition: all color 0.3s ease;
+    transition: background-color 2s;
+    animation: titleSlideIn 3s;
+}
+
+.nav-links li a:hover {
+    color: #ffffff;
+    background-color: #777;
+    border-color: #797a7c;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('your-image.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-text {
+    max-width: 600px;
+    color: #f5f5f5;
+    animation: fadeIn 2s ease;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    animation: titleSlideIn 3s;
+    
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    animation: titleSlideIn 3ms;
+    animation:titleSlideIn 3s;
+    animation: fadeIn 3s;
+}
+
+
+
+@keyframes textAppear{
+   from{
+
+    opacity: 0;}
+    to{
+opacity: 5;
+    }
+    }
+
+
+@keyframes textReveal {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+
+}
+
+@keyframes titleSlideIn {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 5; transform: translateY(0); }
+}
+
+
+footer {
+    background-color: #1b1b1b;
+    padding: 20px;
+    text-align: center;
+    color: #777;
+}
+
+
+
+.activities{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(#2c2929,#1b1b1b,#121212);
+}
+.activities-title{
+font-size: 50px;
+    margin: 0 9px;
+    animation: titleSlideIn 3s ease;
+    color: whitesmoke;
+    animation:textAppear 9s;
+    animation: titleSlideIn 3s;
+        
+    }
+    
+    .activities-image {
+        padding-top:100px;
+        width: 200px;
+        height: 200px;
+        background-color: #5a5757;
+        border-radius:10%;
+        transition: transform 2s ease;
+        position:relatiave;
+        animation:textAppear 9s;
+    }
+    
+    .activities-image.left:hover {
+        transform: translateX(-100px);
+    }
+    .activities-image.rigth:hover{
+        transform:translateX(100px) ;
+    }
+
+
+
+    H4{
+        font-family: 'Times New Roman', Times, serif;
+        text-align: center;
+        color: whitesmoke;
+        animation: textAppear 12s;
+        animation: titleSlideIn 3s;
+        padding-top: 25px;
+        padding-bottom: 50px;
+    }
+    @keyframes titleFlipped{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 5;
+        }
+    }
+
+
+
+    .social-links {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        animation: titleSlideIn 3s;
+        padding-top: 20px;
+        padding-bottom: 5px;
+    }
+    
+    .social-links li a {
+        text-decoration: none;
+        color: #f5f5f5;
+        font-size: 15px;
+        padding:10px 20px;
+        border: 2px solid #f5f5f5;
+        border-radius:30px;
+        transition: all color 0.3s ease;
+        transition: background-color 2s;
+        animation: titleSlideIn 3s;
+    }
+    .social-links li a:hover {
+        color: #ffffff;
+        background-color: #777;
+        border-color: #797a7c;
+    }
+    .social li{
+        font-size: 10px;
+    }
+    .navi {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: rgba(18, 18, 18, 0.7); /* Transparent Background */
+        backdrop-filter: blur(10px);}
