@@ -1,0 +1,949 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.hero {
+    height: 100vh;
+    background-image: url('your-cinematic-image.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 50px;
+    position: relative;
+    padding-bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation:titleSlideIn 5s;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .hero-content {
+    position: relative;
+    padding-bottom: 120px;
+    z-index: 2;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;
+    padding-top: 90px;
+    padding-bottom: 10px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    text-shadow: 6px 6px 15px rgba(0, 0, 0, 0.8);
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .hero-subtitle {
+    font-size: 21px;
+    color: #ffffff;
+    letter-spacing: 5px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    margin-top: 20px;
+    opacity: 0.9;
+    animation: fadeIn 2.5s ease-in-out;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background: transparent;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    border: 0px;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 15px;
+    
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+
+
+
+.navbar a.active {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ddd; /* Slight color change on hover */
+}
+
+.navbar a:focus, .navbar a:active {
+    color: white;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Place the underline just below the link */
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(128, 125, 125, 0.5); /* Shadow effect for the underline */
+    transform: scaleX(0); /* Initially the line is hidden */
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+
+
+
+
+
+
+
+
+.nav-item {
+    display: inline-block;
+    font-size: 18px;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: transform 0.6s ease; /* Smooth transition for flip */
+    transform-style: preserve-3d; /* Preserve 3D space for the flip */
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+/* Flip Effect on Hover */
+.nav-item:hover {
+    transform: rotateY(180deg); /* Flip on hover */
+}
+
+/* Flip Effect on Click */
+.nav-item:focus {
+    transform: rotateY(180deg); /* Flip on focus (clickable) */
+    outline: none; /* Remove focus outline */
+}
+
+/* Backface Visibility (Hide the backside of the text) */
+.nav-item {
+    backface-visibility: hidden; /* Ensure only the front face is visible */
+}
+
+
+
+
+
+
+
+
+
+
+
+H1:hover{
+    color: #3f4343;
+}
+
+
+P:hover{
+    color: #757e7e;
+}
+
+
+
+.video-section video {
+    width: 100%;
+    height: 200%;
+}
+.video{
+    padding-top: 200px;
+    padding-bottom: 500px;
+}
+
+
+
+
+.video :hover{
+    box-shadow: 9px 17px 21px rgba(0, 0, 0, 0.2);
+   
+
+}
+.image-section {
+    margin: 50px 50px;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.image-wrapper {
+    display: flex;
+    justify-content: center;
+    transition: transform 1s ease;
+}
+
+.image1, .image2 {
+    width: 45%;
+    height: auto;
+    margin: 0 10px;
+    transition: transform 9s ease;
+}
+
+.image-overlay-text {
+    position: absolute;
+    font-family: 'Playfair Display',serif;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 40px;
+}
+
+.image-section.sticky-images .image-wrapper {
+    transform: scale(0.9);
+}
+
+.image-section.sticky-images .image1 {
+    transform: translateX(-50%);
+}
+
+.image-section.sticky-images .image2 {
+    transform: translateX(50%);
+}
+
+.image-section:not(.sticky-images) .image1, 
+.image-section:not(.sticky-images) .image2 {
+    transform: translateX(0);
+}
+
+
+
+
+
+@keyframes titleSlideIn {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 5; transform: translateY(0); }
+    }
+    
+    
+    @keyframes titleAppearIn{
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 5; transform: translateY(0); }
+    }
+    
+
+
+    .nav-buttonss {
+        display: flex;
+        gap: 10px; 
+        font-size: 17px;
+        padding-left:15px;
+        padding-bottom: 55px;/* Space between buttons */
+        padding-top: 50px;
+        animation:titleSlideIn 9s;
+        }
+    
+    
+
+
+
+
+        a:visited{
+            text-decoration: none;
+            color: #ffffff;
+            }
+            a:link{
+            text-decoration: none;
+            color: #ffffff;
+            }
+            
+            
+            a:hover{
+            text-decoration: none;
+            color: #ffffff;
+            }
+            a:active{
+            text-decoration: none;
+            color: #ffffff;
+            }
+            
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            body {
+                background-color: #000000;
+                color: #ffffff;
+                transition: background-color 0.5s, color 0.5s;
+              }
+              
+              /* Light Theme */
+              body.light-theme {
+                background: linear-gradient(#757e7e,#a8b0b1,#9b9ea1,#bec0bc);
+                color: #000000;
+                
+              }
+              
+              
+              
+              
+              /* Button styles */
+              #theme-toggle {
+                
+                top: 0px;
+                right: 20px;
+                padding: 10px;
+                background-color:transparent;
+                border: 0px solid currentColor;
+                border-radius: 50%;
+                cursor: pointer;
+                color: inherit;
+                transition: background-color 0.5s, color 0.5s;
+              }
+              
+              
+
+
+
+              
+                
+              
+
+              * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Arial', sans-serif;
+            }
+            
+            /* Main Container */
+            .hero-container {
+                position: relative;
+                background-image: url('c:\Users\USER\Downloads\background image.png'); /* Replace with your image path */
+                background-size: cover;
+                background-position: center;
+                height: 100vh; /* Full height */
+                display: flex;
+              
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Content inside the container */
+            .content {
+                padding-top: 200px;
+                text-align: center;
+                color: white;
+                padding-bottom: 500px;
+            }
+            
+            .content h1 {
+                font-size: 50px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                line-height: 1.2;
+                letter-spacing: 1px;
+            }
+            
+            
+            
+            /* Add a subtle overlay for better text visibility */
+            
+            
+            .content {
+                position: relative;
+                z-index: 2; /* Ensure content is above the overlay */
+            }
+
+            
+
+
+            .TEXT{
+                text-align: center;
+                font-family: 'Playfair Display',serif;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Playfair Display',serif;
+                margin: 0;
+                padding: 0;
+            }
+            
+            /* Container with Background Image */
+            .container {
+                position: relative;
+                width: 100%;
+                height: 100vh; /* Full viewport height */
+                background-image: url('c:\Users\USER\Downloads\background image.png'); /* Set your image path here */
+                background-size: cover; /* Make sure the image covers the container */
+                background-position: center; /* Center the image */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            /* Content Styling */
+            .content {
+                text-align: center;
+                color: white;
+            }
+            
+            .content h1 {
+                font-size: 50px;
+                margin-bottom: 20px;
+                font-family:'Playfair Display',serif ;
+                transition: transform 0.6s ease; /* Smooth transition for flip */
+                transform-style: preserve-3d; /* Preserve 3D space for the flip */
+                position: relative;
+                transition: background-color 0.3s ease;
+                
+            }
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+            /* Add a subtle overlay for better text visibility */
+            
+            
+            .content {
+                position: relative;
+                z-index: 2; /* Ensure content is above the overlay */
+            }
+
+            
+
+
+            .TEXT{
+                text-align: center;
+                font-family: 'Playfair Display',serif;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            
+            body {
+                font-family: 'Playfair Display',serif;
+                margin: 0;
+                padding: 0;
+            }
+
+
+
+
+
+
+
+
+
+
+            
+            
+            /* Container with Background Image */
+            .containe {
+                position: relative;
+                width: 90%;
+                height: 200px; /* Full viewport height */
+                background-image: url('c:\Users\USER\Downloads\background image.png'); /* Set your image path here */
+                background-size: cover; /* Make sure the image covers the container */
+                background-position: center; /* Center the image */
+                display: flex;
+                justify-content: center;
+                padding-top: 300px;
+                padding-bottom: 200px;
+                padding-left: 80px;
+                align-items: center;
+                animation: titleSlideIn 5s;
+            }
+            
+            /* Content Styling */
+            
+            .conten{
+                padding-top: 100px;
+                text-align: start;
+                color: WHITE;
+                padding-left: 20PX;
+            }
+            .conten h1 {
+                font-size: 40px;
+                margin-bottom: 20px;
+                font-family:'Playfair Display',serif ;
+               
+                
+            }
+
+            .conten h1:hover {
+                color:#757b7a;
+            }
+
+.contene p :hover{
+    color: #757e7e;
+}
+
+
+            
+            
+            
+            
+
+            .social-icons {
+                position: fixed; /* Sticky */
+                top: 50%; /* Center vertically */
+                left: 20px; /* Adjust according to your layout */
+                transform: translateY(-50%); /* Centers icons vertically */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px; /* Space between icons */
+                animation: titleSlideIn 5s;
+            }
+            
+            .social-icons a {
+                display: block;
+                width: 50px;
+                height: 50px;
+                background-color: #000000; /* Circle background color */
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: background-color 0.3s ease;
+            }
+            
+            .social-icons a i {
+                color: #0077b5; /* Icon color */
+                font-size: 24px;
+            }
+            
+            .social-icons a.facebook:hover {
+                background-color: #3b5998; /* Facebook blue on hover */
+                transform: scale(1.05);
+            }
+            
+            .social-icons a.twitter:hover {
+                background-color: #1da1f2; /* Twitter blue on hover */
+                transform: scale(1.05);
+            }
+            
+            .social-icons a.linkedin:hover {
+                background-color: #0077b5; /* LinkedIn blue on hover */
+                transform: scale(1.05);
+            }
+            
+            .social-icons a i:hover {
+                color: #524d4d; /* White icon on hover */
+            }
+            
+
+
+
+
+
+            .social-icons a span {
+                position: absolute;
+                left: 60px; /* Position label to the right of the icon */
+                background-color: #000000; /* Label background */
+                color: #757e7e; /* Text color */
+                padding: 5px 10px;
+                border-radius: 4px;
+                opacity: 0; /* Hidden by default */
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+                white-space: nowrap; /* Prevent text wrapping */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional shadow */
+            }
+            
+            .social-icons a:hover span,
+            .social-icons a:focus span {
+                opacity: 1;
+                visibility: visible;}
+
+
+
+
+
+               
+
+
+
+
+
+
+
+
+/* Container Styling */
+.courses-section {
+    padding: 40px;
+  padding-top: 500px;
+  padding-bottom: 300px;
+    text-align: center;
+  }
+
+
+  .courses-title:hover,
+  .courses-title:active {
+    box-shadow: 9px 17px 21px rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+   
+  }
+  
+  .courses-title {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #ffffff;
+    
+  }
+  
+  /* Horizontal Layout for Course Cards */
+  .courses-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    animation: titleSlideIn 5s;
+  }
+  
+  /* Styling for Individual Course Cards */
+  .course-card {
+   
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .course-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .course-card ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .course-card ul li {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: #fffdfd;
+  }
+  
+  /* Responsive Layout for Mobile */
+  @media (max-width: 768px) {
+    .courses-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .course-card {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+
+
+  .course-card:hover,
+.course-card:active {
+  box-shadow: 9px 17px 21px rgba(7, 52, 94, 0.2);
+  transform: translateY(-9px);
+  border: 2px solid #255081;
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Wrapper for the whole section */
+.courses-section-wrapper {
+    padding: 10px;
+    animation: titleSlideIn 5s;
+
+    text-align: start;
+    font-family: 'Playfair Display',serif;
+  }
+  
+  /* Section Heading */
+  .courses-section-heading {
+    font-size:50px ;
+    margin-bottom: 30px;
+    color: #fffdfd;
+  }
+  
+  /* Flexbox container for inline layout */
+  .courses-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Individual Course Boxes */
+  .course-box {
+    
+    border-radius: 10px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+  }
+  
+  /* Hover and Click Highlight Effect */
+  .course-box:hover,
+  .course-box:active {
+    box-shadow: 17px 21px 25px rgba(19, 84, 163, 0.2);
+    transform: translateY(-5px);
+    border: 2px solid #004d40;
+  }
+  
+  /* Image Styling */
+  .course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    animation: titleSlideIn 5s;
+  }
+  
+  /* Course Box Heading */
+  .course-box h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #001c4d;
+    animation: titleSlideIn 5s;
+  }
+  
+  /* Course Box Paragraph */
+  .course-box p {
+    font-size: 1em;
+    color: #010c15;
+    animation: titleSlideIn 5s;
+  }
+  
+  /* Responsive: Stack containers vertically on mobile */
+  @media (max-width: 768px) {
+    .courses-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .course-box {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Dark-Themed Footer */
+.footer {
+    padding-top: 800px;
+    color: #ccc;  /* Light text color */
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container for Footer Content */
+  .footer-container {
+    padding-top: 500px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Contact Information Styling */
+  .footer-contact p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #716c6c;
+  }
+  
+  /* Strong Text Styling */
+  .footer-contact strong {
+    color: #0c1664;  /* Accent color for labels */
+  }
+  
+  /* Responsive Design: Stack content on smaller screens */
+  @media (max-width: 768px) {
+    .footer-contact p {
+      font-size: 1em;
+    }
+  }
+  
